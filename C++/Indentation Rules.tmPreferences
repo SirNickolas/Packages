@@ -22,7 +22,8 @@
 
 		<key>bracketIndentNextLinePattern</key>
 		<string>(?x)
-		^ \s* \b(if|while|else)\b [^;]* $
+		^ \s* \b(if|while)\b [^;]* $
+        | ^ \s* \}? \s* else \b .* $
 		| ^ \s* \b(for)\b .* $
 		</string>
 

@@ -89,16 +89,20 @@ contexts:
       scope: keyword.control.c++
     - match: \b({{control_keywords}})\b
       scope: keyword.control.c++
-    - match: '\bdelete\b(\s*\[\])?|\bnew\b(?!])'
+    - match: '\bdelete\b(\s*\[\s*\])?|\bnew\b(?!])'
       scope: keyword.control.c++
     - match: \b({{operator_keywords}})\b
       scope: keyword.operator.word.c++
+    - match: \b(exitwhen|fallthrough)\b
+      scope: keyword.control.c++
 
   unique-types:
     - match: \b(char16_t|char32_t|wchar_t|nullptr_t)\b
       scope: storage.type.c++
     - match: \bclass\b
       scope: storage.type.c++
+    - match: \b(let|uchar|ushort|uint|u?llong|ldouble|[iu](8|16|32|64|z)|(u?(char(16|32)|short(8|16)|int[48]|llong[24])v)|array|bitset|complex|jmp_buf|FILE|fpos_t|l?l?div_t|deque|(forward_|initializer_)?list|([io]?(f|string)|[io]|io)stream|(file|stream|string)buf|streamsize|ios(_base)?|(const_)?(reverse_)?iterator|(unordered_)?(multi)?(map|set)|(prioirty_)?queue|stack|[uw]?string|tuple|pair|valarray|vector)\b
+      scope: support.type.c++
 
   unique-strings:
     - match: '((?:L|u8|u|U)?R)("([^\(\)\\ ]{0,16})\()'
